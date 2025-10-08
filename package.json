@@ -1,0 +1,28 @@
+{
+  "name": "music-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "loc",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^latest",
+    "electron-builder": "^latest"
+  },
+  "build":{
+    "appId": "com.example.music-player",
+    "productName": "Music Player",
+    "directories": {
+      "buildResources": "build"
+    },
+    "mac": {
+      "icon": "src/build/disk.icns"
+    }
+  }
+}

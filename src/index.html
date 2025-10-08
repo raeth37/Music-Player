@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+  <head>
+    <meta charset = 'UTF-8'>
+    <title>Loc's Music Player</title>
+    <link
+      rel = 'stylesheet'
+      href = 'https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css'
+    />
+
+    <link rel = 'stylesheet' href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+
+
+    <link rel = 'stylesheet' href = 'index.css' />
+    <script defer src = 'render.js'></script>
+  </head>
+
+  <body>
+    <audio src = 'songs/Karma.mp3' id = 'audio'></audio>
+
+    <div class = 'disk'>
+        <img src = 'images/disk.png' width = '400' height = '400' class = 'disk-logo-spin' id = 'img'></img>
+    </div>
+
+    <div class = 'song-name'>
+        <h1 class = 'title' id = 'current-song'>loading</h1>
+        <div class = 'progress-bar'>
+            <div class = 'progress'></div>
+        </div>
+    </div>
+
+    <div class = 'playbar'>
+        <button class = 'icon-button' id = 'volume' onclick = 'mute()'>
+            <i class = 'fa-solid fa-volume-high'></i>
+        </button>
+
+        <button class = 'icon-button' onclick = 'backward()'>
+            <i class = 'fa-solid fa-backward'></i>
+        </button>
+
+        <button class = 'icon-button' id = 'play' onclick= 'play()'>
+            <i class = 'fa-solid fa-play'></i>
+        </button>
+
+        <button class = 'icon-button' onclick = 'forward()'>
+            <i class = 'fa-solid fa-forward'></i>
+        </button>
+
+        <button class = 'icon-button' id = 'loop' onclick = 'loop()'>
+            <i class = 'fa-solid fa-repeat'></i>
+        </button>
+           
+    </div>
+
+  </body>
+
+</html>
