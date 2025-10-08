@@ -94,6 +94,14 @@ function backward(){
     audio.currentTime -= 10;
 }
 
+function volumeUp(){
+    audio.volume += 0.10;
+}
+
+function volumeDown(){
+    audio.volume -= 0.10;
+}
+
 function mute(){
     isMute = !isMute;
 
@@ -167,4 +175,13 @@ document.addEventListener('keydown', function(event) {
     if(event.key == 'ArrowRight'){
         forward();
     }
+
+    if(event.key == 'ArrowUp'){
+        volumeUp();
+    }
+
+    if(event.key == 'ArrowDown'){
+        volumeDown();
+    }
+    
 });
