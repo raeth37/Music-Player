@@ -17,7 +17,9 @@ const progress = document.querySelector('.progress');
 const progressBar = document.querySelector('.progress-bar');
 
 // figure out a way to load songs in from songs folder
-const songs = ['Karma', 'Just a Man', 'Wiege'];
+const songs = ['Karma', 'Just a Man', 'Wiege', 'String Theory', 'Cure', 'Black Sorrow', 'Seasonal Feathers', '枕边童话',
+    'Vang Trang Khoc', 'Sea', 'Chan Tinh', 'Meguru Kisetsu', 'Carrying You'
+];
 
 let songIndex = 0;
 
@@ -57,7 +59,7 @@ function update(){
             time = 0;
             playSong(songs[songIndex]);
         }
-        else forward();
+        else nextSong();
     }
 }
 
@@ -84,6 +86,14 @@ function play(){
     }
 }
 
+function forward(){
+    audio.currentTime += 10;
+}
+
+function backward(){
+    audio.currentTime -= 10;
+}
+
 function mute(){
     isMute = !isMute;
 
@@ -101,7 +111,7 @@ function mute(){
 }
 
 
-function backward(){
+function prevSong(){
     if(!looped){
         songIndex--;
 
@@ -116,7 +126,7 @@ function backward(){
     else playSong(songs[songIndex]);
 }
 
-function forward(){
+function nextSong(){
     if(!looped){
         songIndex++;
 
@@ -148,3 +158,13 @@ function loop(){
 
 audio.addEventListener('timeupdate', updateBar);
 progressBar.addEventListener('click', setBar);
+
+document.addEventListener('keydown', function(event) {
+    if(event.key == 'ArrowLeft'){
+        backward();
+    }
+
+    if(event.key == 'ArrowRight'){
+        forward();
+    }
+});

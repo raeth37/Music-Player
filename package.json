@@ -12,10 +12,10 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "electron": "^latest",
-    "electron-builder": "^latest"
+    "electron": "^38.2.2",
+    "electron-builder": "^25.1.8"
   },
-  "build":{
+  "build": {
     "appId": "com.example.music-player",
     "productName": "Music Player",
     "directories": {
